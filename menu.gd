@@ -1,18 +1,19 @@
-extends Control
+extends CanvasLayer
 
+signal start_game
+signal menu_set_number_size(size: int)
+signal menu_set_list_size(size: int)
+signal menu_set_complexity(complexity: int)
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_difficulty()
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func difficulty_levels() -> Dictionary:
 	return{
+		0: {
+			"label": tr("0"),
+			"value": 0
+		},
 		1: {
 			"label": tr("1"),
 			"value": 1
@@ -41,9 +42,6 @@ func difficulty_levels() -> Dictionary:
 
 func set_difficulty() -> void:
 	print_debug("set_difficulty :")
-	#var memory_size_list : Array = [1,2,3,4,5,6] # amount of numbers to memorize
-	#var problem_list_size : Array = [1,2,3,4,5,6] # amount of math problems to solve
-	#var problem_complexity : Array = [1,2,3,4,5,6] # complexity of the math problems
 	
 	var memory_size_list : Dictionary = difficulty_levels() # amount of numbers to memorize
 	var problem_list_size : Dictionary = difficulty_levels() # amount of math problems to solve
@@ -53,14 +51,31 @@ func set_difficulty() -> void:
 	$ListSizeContainer/OptionButton.clear()
 	$ComplexityContainer/OptionButton.clear()
 	
-	#add numberSize options
 	for i in memory_size_list:
 		$NumberSizeContainer/OptionButton.add_item(memory_size_list[i].label, i)
+	$NumberSizeContainer/OptionButton.select(4)
 	
-	#add listsize
 	for i in problem_list_size:
 		$ListSizeContainer/OptionButton.add_item(problem_list_size[i].label, i)
+	$ListSizeContainer/OptionButton.select(2)
 	
-	#add complexity
 	for i in problem_complexity:
 		$ComplexityContainer/OptionButton.add_item(problem_complexity[i].label, i)
+	$ComplexityContainer/OptionButton.select(1)
+
+
+func _on_number_size_selected(size: int) -> void:
+	emit_signal("menu_set_number_size", size)
+	pass
+
+func _on_list_size_selected(size: int) -> void:
+	emit_signal("menu_set_list_size", size)
+	pass
+
+func _on_complexity_selected(complexity: int) -> void:
+	emit_signal("menu_set_complexity", complexity)
+	pass
+
+
+func start() -> void:
+	emit_signal("start_game")

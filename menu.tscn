@@ -1,101 +1,95 @@
 [gd_scene load_steps=3 format=3 uid="uid://3r8vht8t5e7a"]
 
-[ext_resource type="Texture2D" uid="uid://c2bxvndavufm" path="res://phone_bg.jpeg" id="1_3lveg"]
-[ext_resource type="Script" path="res://menu.gd" id="1_ym6qo"]
+[ext_resource type="Script" path="res://menu.gd" id="1_sn0qw"]
+[ext_resource type="Texture2D" uid="uid://c2bxvndavufm" path="res://phone_bg.jpeg" id="2_k84xi"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchor_right = 0.643
-anchor_bottom = 2.457
-offset_right = 0.263977
-offset_bottom = -0.135986
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_ym6qo")
+[node name="menu" type="CanvasLayer"]
+script = ExtResource("1_sn0qw")
 
-[node name="background" type="TextureRect" parent="."]
-modulate = Color(0.299547, 0.299547, 0.299547, 1)
-texture_filter = 1
-layout_mode = 1
+[node name="Background" type="TextureRect" parent="." groups=["hidable_menu"]]
+modulate = Color(0.446777, 0.446777, 0.446777, 1)
+offset_right = 736.0
+offset_bottom = 1592.0
+texture = ExtResource("2_k84xi")
+
+[node name="title" type="Label" parent="." groups=["hidable_menu"]]
 anchors_preset = -1
-anchor_left = 0.792
-anchor_right = 0.792
-offset_left = -367.966
-offset_top = 4.0
-offset_right = 368.034
-offset_bottom = 1596.0
-texture = ExtResource("1_3lveg")
-stretch_mode = 2
-
-[node name="title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.820816
-anchor_top = 0.00101739
-anchor_right = 0.820816
-anchor_bottom = 0.0010174
+anchor_left = 0.517123
+anchor_top = 0.00563847
+anchor_right = 0.517123
+anchor_bottom = 0.00563847
 offset_left = -134.5
 offset_top = 168.001
 offset_right = 117.5
 offset_bottom = 286.999
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 55
 text = "Brane"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="NumberSizeContainer" type="FlowContainer" parent="."]
-layout_mode = 1
+[node name="StartButton" type="Button" parent="." groups=["hidable_menu"]]
+anchors_preset = -1
+anchor_left = 0.806
+anchor_top = 0.145
+anchor_right = 0.806
+anchor_bottom = 0.145
+offset_left = -303.38
+offset_top = 917.58
+offset_right = -145.38
+offset_bottom = 1001.58
+theme_override_font_sizes/font_size = 35
+text = "Start"
+
+[node name="NumberSizeContainer" type="FlowContainer" parent="." groups=["hidable_menu"]]
 anchors_preset = -1
 anchor_left = 0.807
 anchor_top = 0.145
 anchor_right = 0.807
 anchor_bottom = 0.145
-offset_left = -121.011
-offset_top = 16.9957
-offset_right = 113.989
-offset_bottom = 58.9957
+offset_left = -304.11
+offset_top = 207.58
+offset_right = -34.11
+offset_bottom = 256.58
 
 [node name="Label" type="Label" parent="NumberSizeContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 35
 text = "number size"
 
 [node name="OptionButton" type="OptionButton" parent="NumberSizeContainer"]
 layout_mode = 2
 
-[node name="ListSizeContainer" type="FlowContainer" parent="."]
-layout_mode = 1
+[node name="ListSizeContainer" type="FlowContainer" parent="." groups=["hidable_menu"]]
 anchors_preset = -1
 anchor_left = 0.806
 anchor_top = 0.145
 anchor_right = 0.806
 anchor_bottom = 0.145
-offset_left = -120.541
-offset_top = 153.996
-offset_right = 91.4589
-offset_bottom = 207.996
+offset_left = -303.38
+offset_top = 390.58
+offset_right = -150.38
+offset_bottom = 444.58
 
 [node name="Label" type="Label" parent="ListSizeContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 35
 text = "focus"
 
 [node name="OptionButton" type="OptionButton" parent="ListSizeContainer"]
 layout_mode = 2
 
-[node name="ComplexityContainer" type="FlowContainer" parent="."]
-layout_mode = 1
+[node name="ComplexityContainer" type="FlowContainer" parent="." groups=["hidable_menu"]]
 anchors_preset = -1
 anchor_left = 0.806
 anchor_top = 0.145
 anchor_right = 0.806
 anchor_bottom = 0.145
-offset_left = -120.541
-offset_top = 296.996
-offset_right = 91.4589
-offset_bottom = 345.996
+offset_left = -303.38
+offset_top = 570.58
+offset_right = -91.3801
+offset_bottom = 619.58
 
 [node name="Label" type="Label" parent="ComplexityContainer"]
 layout_mode = 2
@@ -105,15 +99,7 @@ text = "difficulty"
 [node name="OptionButton" type="OptionButton" parent="ComplexityContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 2
-anchor_left = 0.806
-anchor_top = 0.145
-anchor_right = 0.806
-anchor_bottom = 0.145
-offset_left = -66.5411
-offset_top = 516.996
-offset_right = 23.4589
-offset_bottom = 573.996
-theme_override_font_sizes/font_size = 35
-text = "Start"
+[connection signal="pressed" from="StartButton" to="." method="start"]
+[connection signal="item_selected" from="NumberSizeContainer/OptionButton" to="." method="_on_number_size_selected"]
+[connection signal="item_selected" from="ListSizeContainer/OptionButton" to="." method="_on_list_size_selected"]
+[connection signal="item_selected" from="ComplexityContainer/OptionButton" to="." method="_on_complexity_selected"]
