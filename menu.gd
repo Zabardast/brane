@@ -64,19 +64,6 @@ func set_difficulty() -> void:
 	$ComplexityContainer/OptionButton.select(1)
 
 
-#func _on_number_size_selected(size: int) -> void:
-	#emit_signal("menu_set_number_size", size)
-	#pass
-#
-#func _on_list_size_selected(size: int) -> void:
-	#emit_signal("menu_set_list_size", size)
-	#pass
-#
-#func _on_complexity_selected(complexity: int) -> void:
-	#emit_signal("menu_set_complexity", complexity)
-	#pass
-
-
 func start() -> void:
 	emit_signal("menu_set_number_size", $NumberSizeContainer/OptionButton.get_selected())
 	emit_signal("menu_set_list_size", $ListSizeContainer/OptionButton.get_selected())
