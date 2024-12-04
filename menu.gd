@@ -65,6 +65,7 @@ func set_difficulty() -> void:
 
 
 func start() -> void:
+	# TODO: pass all data in one signal (use an object??)
 	emit_signal("menu_set_number_size", $NumberSizeContainer/OptionButton.get_selected())
 	emit_signal("menu_set_list_size", $ListSizeContainer/OptionButton.get_selected())
 	emit_signal("menu_set_complexity", $ComplexityContainer/OptionButton.get_selected())

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ju0puuqa2vbk"]
+
+[ext_resource type="Script" path="res://memory.gd" id="1_a4wib"]
+
+[node name="Memory" type="CanvasLayer"]
+script = ExtResource("1_a4wib")
+
+[node name="ColorRect" type="ColorRect" parent="." groups=["hidable_memory"]]
+visible = false
+offset_right = 730.0
+offset_bottom = 1600.0
+color = Color(0.2203, 0.454619, 0.597708, 1)
+
+[node name="Label" type="Label" parent="." groups=["hidable_memory"]]
+offset_left = 214.0
+offset_top = 659.0
+offset_right = 516.0
+offset_bottom = 728.0
+theme_override_font_sizes/font_size = 50
+text = "place holder"
+
+[node name="Button" type="Button" parent="." groups=["hidable_memory"]]
+offset_left = 248.0
+offset_top = 965.0
+offset_right = 476.0
+offset_bottom = 1042.0
+theme_override_font_sizes/font_size = 50
+text = "Continue"
+
+[connection signal="pressed" from="Button" to="." method="_start_math_step"]
