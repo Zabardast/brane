@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://wp6vf2v07cvq"]
+
+[ext_resource type="Script" path="res://remember.gd" id="1_tepvd"]
+
+[node name="Remember" type="CanvasLayer"]
+script = ExtResource("1_tepvd")
+
+[node name="Label" type="LineEdit" parent="." groups=["hidable_memory"]]
+offset_left = 214.0
+offset_top = 659.0
+offset_right = 516.0
+offset_bottom = 736.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Button" type="Button" parent="." groups=["hidable_memory"]]
+offset_left = 248.0
+offset_top = 965.0
+offset_right = 476.0
+offset_bottom = 1042.0
+theme_override_font_sizes/font_size = 50
+text = "Next"
+
+[connection signal="pressed" from="Button" to="." method="button_test_remember"]

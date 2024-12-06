@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal start_remember
+
 var complexity:int
 var list_size:int
 
@@ -33,6 +35,8 @@ func new_challenge() -> String:
 	print_debug("list_size : " ,list_size)
 	if list_size <= 0:
 		print_debug("go to recall page")
+		emit_signal("start_remember")
+	
 	# operator
 	match randi() % 3:
 		0:

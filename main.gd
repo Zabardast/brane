@@ -19,6 +19,10 @@ func _ready() -> void:
 	$Memory.connect("start_challenge", Callable(self, "_start_challenge"))
 	
 	$ChallengeLoop.hide()
+	$ChallengeLoop.connect("start_remember", Callable(self, "_start_remember"))
+	
+	$Remember.hide()
+	$Remember.connect("test_remember", Callable(self, "_try_remember"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,6 +59,19 @@ func _start_challenge() -> void:
 	$ChallengeLoop.show()
 	pass
 
+func _start_remember() -> void:
+	$ChallengeLoop.hide()
+	print("remember start")
+	$Remember.show()
+	pass
+
+func _try_remember(p_val: String) -> void:
+	print(p_val)
+	if memory_number == int(p_val):
+		print("correct!!")
+		$Remember.hide()
+		$Menu.show()
+	pass
 
 # TODO remove and pass data in the start game signal
 
