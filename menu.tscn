@@ -14,14 +14,14 @@ texture = ExtResource("2_k84xi")
 
 [node name="title" type="Label" parent="." groups=["hidable_menu"]]
 anchors_preset = -1
-anchor_left = 0.517123
-anchor_top = 0.00563847
-anchor_right = 0.517123
-anchor_bottom = 0.00563847
-offset_left = -134.5
-offset_top = 168.001
-offset_right = 117.5
-offset_bottom = 286.999
+anchor_left = 0.005
+anchor_top = 0.002
+anchor_right = 0.005
+anchor_bottom = 0.002
+offset_left = 236.35
+offset_top = 194.8
+offset_right = 488.35
+offset_bottom = 313.798
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 55
 text = "Brane"
@@ -35,10 +35,10 @@ anchor_left = 0.806
 anchor_top = 0.145
 anchor_right = 0.806
 anchor_bottom = 0.145
-offset_left = -303.38
-offset_top = 917.58
-offset_right = -145.38
-offset_bottom = 1001.58
+offset_left = -312.38
+offset_top = 921.0
+offset_right = -154.38
+offset_bottom = 1005.0
 theme_override_font_sizes/font_size = 35
 text = "Start"
 
@@ -48,10 +48,10 @@ anchor_left = 0.807
 anchor_top = 0.145
 anchor_right = 0.807
 anchor_bottom = 0.145
-offset_left = -304.11
-offset_top = 207.58
-offset_right = -34.11
-offset_bottom = 256.58
+offset_left = -349.11
+offset_top = 208.0
+offset_right = -79.11
+offset_bottom = 257.0
 
 [node name="Label" type="Label" parent="NumberSizeContainer"]
 layout_mode = 2
@@ -67,10 +67,10 @@ anchor_left = 0.806
 anchor_top = 0.145
 anchor_right = 0.806
 anchor_bottom = 0.145
-offset_left = -303.38
-offset_top = 390.58
-offset_right = -150.38
-offset_bottom = 444.58
+offset_left = -348.38
+offset_top = 391.0
+offset_right = -195.38
+offset_bottom = 445.0
 
 [node name="Label" type="Label" parent="ListSizeContainer"]
 layout_mode = 2
@@ -86,10 +86,10 @@ anchor_left = 0.806
 anchor_top = 0.145
 anchor_right = 0.806
 anchor_bottom = 0.145
-offset_left = -303.38
-offset_top = 570.58
-offset_right = -91.3801
-offset_bottom = 619.58
+offset_left = -348.38
+offset_top = 571.0
+offset_right = -136.38
+offset_bottom = 620.0
 
 [node name="Label" type="Label" parent="ComplexityContainer"]
 layout_mode = 2

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://s56g7unpo78"]
+[gd_scene load_steps=5 format=3 uid="uid://s56g7unpo78"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_l1iry"]
 [ext_resource type="PackedScene" uid="uid://3r8vht8t5e7a" path="res://menu.tscn" id="1_nbcsh"]
 [ext_resource type="PackedScene" uid="uid://ju0puuqa2vbk" path="res://memory.tscn" id="3_ckqq2"]
+[ext_resource type="PackedScene" uid="uid://c0uww8qnpuwuu" path="res://challenge_loop.tscn" id="4_mx3r3"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -23,3 +24,5 @@ color = Color(0.0967089, 0.235205, 0.319018, 1)
 [node name="Menu" parent="." instance=ExtResource("1_nbcsh")]
 
 [node name="Memory" parent="." instance=ExtResource("3_ckqq2")]
+
+[node name="ChallengeLoop" parent="." instance=ExtResource("4_mx3r3")]

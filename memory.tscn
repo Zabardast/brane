@@ -25,6 +25,6 @@ offset_top = 965.0
 offset_right = 476.0
 offset_bottom = 1042.0
 theme_override_font_sizes/font_size = 50
-text = "Continue"
+text = "Next"
 
 [connection signal="pressed" from="Button" to="." method="_start_math_step"]

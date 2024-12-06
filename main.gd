@@ -16,7 +16,9 @@ func _ready() -> void:
 	menu.connect("menu_set_complexity", Callable(self, "_menu_set_complexity"))
 	
 	$Memory.hide()
-	$Memory.connect("start_math", Callable(self, "_start_math"))
+	$Memory.connect("start_challenge", Callable(self, "_start_challenge"))
+	
+	$ChallengeLoop.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,8 +46,13 @@ func get_random_number(p_size: int) -> int:
 	# for some reason to the power is ** and not ^
 	return randi() % ((10**p_size)-1)
 
-func _start_math() -> void:
+func _start_challenge() -> void:
 	$Memory.hide()
+	print("challenge_loop start")
+	$ChallengeLoop.set_list_size(list_size)
+	$ChallengeLoop.set_complexity(complexity)
+	$ChallengeLoop.new_challenge()
+	$ChallengeLoop.show()
 	pass
 
 

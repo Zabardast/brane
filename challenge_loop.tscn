@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0uww8qnpuwuu"]
+
+[ext_resource type="Script" path="res://challenge_loop.gd" id="1_1pjg2"]
+
+[node name="ChallengeLoop" type="CanvasLayer"]
+script = ExtResource("1_1pjg2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 105.0
+offset_top = 467.0
+offset_right = 369.0
+offset_bottom = 536.0
+theme_override_font_sizes/font_size = 50
+text = "Challenge :"
+
+[node name="ChallengeLabel" type="Label" parent="."]
+offset_left = 105.0
+offset_top = 578.0
+offset_right = 615.0
+offset_bottom = 679.0
+theme_override_font_sizes/font_size = 50
+text = "Place holder"
+
+[node name="SolutionLineEdit" type="LineEdit" parent="."]
+offset_left = 105.0
+offset_top = 713.0
+offset_right = 615.0
+offset_bottom = 790.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Button" type="Button" parent="."]
+offset_left = 231.0
+offset_top = 987.0
+offset_right = 495.0
+offset_bottom = 1094.0
+theme_override_font_sizes/font_size = 50
+text = "Next"
+
+[node name="ResultLabel" type="Label" parent="."]
+offset_left = 105.0
+offset_top = 848.0
+offset_right = 615.0
+offset_bottom = 922.0
+theme_override_font_sizes/font_size = 50
+
+[connection signal="pressed" from="Button" to="." method="atemp_challenge"]
