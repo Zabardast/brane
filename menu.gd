@@ -61,7 +61,7 @@ func set_difficulty() -> void:
 	
 	for i in problem_complexity:
 		$ComplexityContainer/OptionButton.add_item(problem_complexity[i].label, i)
-	$ComplexityContainer/OptionButton.select(1)
+	$ComplexityContainer/OptionButton.select(2)
 
 
 func start() -> void:

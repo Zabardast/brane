@@ -25,10 +25,9 @@ func set_complexity(p_complexity:int) -> void:
 	complexity = p_complexity
 
 func new_challenge() -> String:
-	var val1:int = randi() % (complexity*10)
-	var val2:int = randi() % (complexity*10)
+	var val1:int = randi() % (10**complexity)
+	var val2:int = randi() % (10**complexity)
 	var val3:String = "!"
-	list_size = list_size - 1
 	#print_debug("complexity ", complexity)
 	#print_debug("val1 : " ,val1)
 	#print_debug("val2 : " ,val2)
@@ -37,6 +36,7 @@ func new_challenge() -> String:
 		print_debug("go to recall page")
 		emit_signal("start_remember")
 	
+	list_size = list_size - 1
 	# operator
 	match randi() % 3:
 		0:

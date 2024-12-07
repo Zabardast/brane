@@ -68,6 +68,7 @@ text = "number size"
 
 [node name="OptionButton" type="OptionButton" parent="NumberSizeContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 
 [node name="ListSizeContainer" type="FlowContainer" parent="." groups=["hidable_menu"]]
 anchors_preset = -1
@@ -87,6 +88,7 @@ text = "focus"
 
 [node name="OptionButton" type="OptionButton" parent="ListSizeContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 
 [node name="ComplexityContainer" type="FlowContainer" parent="." groups=["hidable_menu"]]
 anchors_preset = -1
@@ -106,6 +108,7 @@ text = "difficulty"
 
 [node name="OptionButton" type="OptionButton" parent="ComplexityContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 
 [connection signal="pressed" from="StartButtonContainer/StartButton" to="." method="start"]
 [connection signal="item_selected" from="NumberSizeContainer/OptionButton" to="." method="_on_number_size_selected"]
