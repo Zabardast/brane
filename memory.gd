@@ -4,6 +4,7 @@ signal start_challenge
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Label.set_text("")
 	pass # Replace with function body.
 
 

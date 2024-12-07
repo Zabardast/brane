@@ -8,8 +8,8 @@ script = ExtResource("1_sn0qw")
 
 [node name="Background" type="TextureRect" parent="." groups=["hidable_menu"]]
 modulate = Color(0.446777, 0.446777, 0.446777, 1)
-offset_right = 736.0
-offset_bottom = 1592.0
+offset_right = 787.0
+offset_bottom = 1718.0
 texture = ExtResource("2_k84xi")
 
 [node name="title" type="Label" parent="." groups=["hidable_menu"]]

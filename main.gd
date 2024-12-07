@@ -56,12 +56,14 @@ func _start_challenge() -> void:
 	$ChallengeLoop.set_list_size(list_size)
 	$ChallengeLoop.set_complexity(complexity)
 	$ChallengeLoop.new_challenge()
+	$ChallengeLoop/ResultLabel.set_text("")
 	$ChallengeLoop.show()
 	pass
 
 func _start_remember() -> void:
 	$ChallengeLoop.hide()
 	print("remember start")
+	$Remember/Label.set_text("")
 	$Remember.show()
 	pass
 

@@ -14,10 +14,9 @@ color = Color(0.2203, 0.454619, 0.597708, 1)
 [node name="Label" type="Label" parent="." groups=["hidable_memory"]]
 offset_left = 214.0
 offset_top = 659.0
-offset_right = 516.0
+offset_right = 512.0
 offset_bottom = 728.0
 theme_override_font_sizes/font_size = 50
-text = "place holder"
 
 [node name="Button" type="Button" parent="." groups=["hidable_memory"]]
 offset_left = 248.0

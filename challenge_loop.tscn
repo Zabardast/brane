@@ -19,7 +19,6 @@ offset_top = 578.0
 offset_right = 615.0
 offset_bottom = 679.0
 theme_override_font_sizes/font_size = 50
-text = "Place holder"
 
 [node name="SolutionLineEdit" type="LineEdit" parent="."]
 offset_left = 105.0

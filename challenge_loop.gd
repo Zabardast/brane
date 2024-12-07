@@ -60,6 +60,7 @@ func new_challenge() -> String:
 		print_debug("no operator match found!!")
 	
 	$ChallengeLabel.set_text(tmp_expression)
+	$SolutionLineEdit.set_text("")
 	
 	return tmp_expression
 
