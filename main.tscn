@@ -16,10 +16,27 @@ grow_vertical = 2
 script = ExtResource("1_l1iry")
 metadata/_edit_use_anchors_ = true
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 730.0
-offset_bottom = 1662.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.0967089, 0.235205, 0.319018, 1)
 
 [node name="Menu" parent="." instance=ExtResource("1_nbcsh")]

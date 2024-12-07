@@ -8,37 +8,45 @@ script = ExtResource("1_sn0qw")
 
 [node name="Background" type="TextureRect" parent="." groups=["hidable_menu"]]
 modulate = Color(0.446777, 0.446777, 0.446777, 1)
-offset_right = 787.0
-offset_bottom = 1718.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_k84xi")
 
-[node name="title" type="Label" parent="." groups=["hidable_menu"]]
+[node name="NameContainer" type="FlowContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.005
-anchor_top = 0.002
-anchor_right = 0.005
-anchor_bottom = 0.002
-offset_left = 236.35
-offset_top = 194.8
-offset_right = 488.35
-offset_bottom = 313.798
-grow_horizontal = 2
+anchor_left = 0.5
+anchor_top = 0.134
+anchor_right = 0.5
+anchor_bottom = 0.134
+offset_left = -79.0
+offset_top = -16.4
+offset_right = 80.0
+offset_bottom = 59.6
+
+[node name="title" type="Label" parent="NameContainer" groups=["hidable_menu"]]
+layout_mode = 2
 theme_override_font_sizes/font_size = 55
 text = "Brane"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="StartButton" type="Button" parent="." groups=["hidable_menu"]]
+[node name="StartButtonContainer" type="FlowContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.806
-anchor_top = 0.145
-anchor_right = 0.806
-anchor_bottom = 0.145
-offset_left = -312.38
-offset_top = 921.0
-offset_right = -154.38
-offset_bottom = 1005.0
+anchor_left = 0.5
+anchor_top = 0.688
+anchor_right = 0.503
+anchor_bottom = 0.688
+offset_left = -35.0
+offset_top = -98.8
+offset_right = 57.81
+offset_bottom = -41.8
+
+[node name="StartButton" type="Button" parent="StartButtonContainer" groups=["hidable_menu"]]
+layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Start"
 
@@ -99,7 +107,7 @@ text = "difficulty"
 [node name="OptionButton" type="OptionButton" parent="ComplexityContainer"]
 layout_mode = 2
 
-[connection signal="pressed" from="StartButton" to="." method="start"]
+[connection signal="pressed" from="StartButtonContainer/StartButton" to="." method="start"]
 [connection signal="item_selected" from="NumberSizeContainer/OptionButton" to="." method="_on_number_size_selected"]
 [connection signal="item_selected" from="ListSizeContainer/OptionButton" to="." method="_on_list_size_selected"]
 [connection signal="item_selected" from="ComplexityContainer/OptionButton" to="." method="_on_complexity_selected"]
