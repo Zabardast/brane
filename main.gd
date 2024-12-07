@@ -23,6 +23,7 @@ func _ready() -> void:
 	
 	$Remember.hide()
 	$Remember.connect("test_remember", Callable(self, "_try_remember"))
+	$Remember.connect("forgot", Callable(self, "_forgot_remember"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -74,6 +75,11 @@ func _try_remember(p_val: String) -> void:
 		$Remember.hide()
 		$Menu.show()
 	pass
+
+func _forgot_remember() -> void:
+	print("main forgot")
+	$Remember.hide()
+	$Menu.show()
 
 # TODO remove and pass data in the start game signal
 

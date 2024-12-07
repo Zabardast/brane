@@ -20,4 +20,13 @@ offset_bottom = 1042.0
 theme_override_font_sizes/font_size = 50
 text = "Next"
 
+[node name="ForgotButton" type="Button" parent="." groups=["hidable_memory"]]
+offset_left = 248.0
+offset_top = 1157.0
+offset_right = 476.0
+offset_bottom = 1234.0
+theme_override_font_sizes/font_size = 50
+text = "ooops..."
+
 [connection signal="pressed" from="Button" to="." method="button_test_remember"]
+[connection signal="pressed" from="ForgotButton" to="." method="button_forgot_remember"]

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal test_remember(val: String)
+signal forgot
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,4 +15,8 @@ func _process(delta: float) -> void:
 
 func button_test_remember() -> void:
 	emit_signal("test_remember", $Label.get_text())
+	pass
+
+func button_forgot_remember() -> void:
+	emit_signal("forgot")
 	pass
