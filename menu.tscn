@@ -34,83 +34,72 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="StartButtonContainer" type="FlowContainer" parent="."]
-anchors_preset = -1
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.688
-anchor_right = 0.503
-anchor_bottom = 0.688
-offset_left = -35.0
-offset_top = -98.8
-offset_right = 57.81
-offset_bottom = -41.8
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -351.0
+offset_right = 196.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="StartButtonContainer" groups=["hidable_menu"]]
+[node name="ComplexityContainer" type="FlowContainer" parent="GridContainer" groups=["hidable_menu"]]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "Start"
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="NumberSizeContainer" type="FlowContainer" parent="." groups=["hidable_menu"]]
-anchors_preset = -1
-anchor_left = 0.807
-anchor_top = 0.145
-anchor_right = 0.807
-anchor_bottom = 0.145
-offset_left = -349.11
-offset_top = 208.0
-offset_right = -79.11
-offset_bottom = 257.0
-
-[node name="Label" type="Label" parent="NumberSizeContainer"]
+[node name="Label" type="Label" parent="GridContainer/ComplexityContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "number size"
-
-[node name="OptionButton" type="OptionButton" parent="NumberSizeContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-
-[node name="ListSizeContainer" type="FlowContainer" parent="." groups=["hidable_menu"]]
-anchors_preset = -1
-anchor_left = 0.806
-anchor_top = 0.145
-anchor_right = 0.806
-anchor_bottom = 0.145
-offset_left = -348.38
-offset_top = 391.0
-offset_right = -195.38
-offset_bottom = 445.0
-
-[node name="Label" type="Label" parent="ListSizeContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "focus"
-
-[node name="OptionButton" type="OptionButton" parent="ListSizeContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-
-[node name="ComplexityContainer" type="FlowContainer" parent="." groups=["hidable_menu"]]
-anchors_preset = -1
-anchor_left = 0.806
-anchor_top = 0.145
-anchor_right = 0.806
-anchor_bottom = 0.145
-offset_left = -348.38
-offset_top = 571.0
-offset_right = -136.38
-offset_bottom = 620.0
-
-[node name="Label" type="Label" parent="ComplexityContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 50
 text = "difficulty"
 
-[node name="OptionButton" type="OptionButton" parent="ComplexityContainer"]
+[node name="OptionButton" type="OptionButton" parent="GridContainer/ComplexityContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 50
 
-[connection signal="pressed" from="StartButtonContainer/StartButton" to="." method="start"]
-[connection signal="item_selected" from="NumberSizeContainer/OptionButton" to="." method="_on_number_size_selected"]
-[connection signal="item_selected" from="ListSizeContainer/OptionButton" to="." method="_on_list_size_selected"]
-[connection signal="item_selected" from="ComplexityContainer/OptionButton" to="." method="_on_complexity_selected"]
+[node name="ListSizeContainer" type="FlowContainer" parent="GridContainer" groups=["hidable_menu"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="GridContainer/ListSizeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "focus"
+
+[node name="OptionButton" type="OptionButton" parent="GridContainer/ListSizeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="NumberSizeContainer" type="FlowContainer" parent="GridContainer" groups=["hidable_menu"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="GridContainer/NumberSizeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "number size"
+
+[node name="OptionButton" type="OptionButton" parent="GridContainer/NumberSizeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="StartButtonContainer" type="FlowContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="StartButton" type="Button" parent="GridContainer/StartButtonContainer" groups=["hidable_menu"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[connection signal="item_selected" from="GridContainer/ComplexityContainer/OptionButton" to="." method="_on_complexity_selected"]
+[connection signal="item_selected" from="GridContainer/ListSizeContainer/OptionButton" to="." method="_on_list_size_selected"]
+[connection signal="item_selected" from="GridContainer/NumberSizeContainer/OptionButton" to="." method="_on_number_size_selected"]
+[connection signal="pressed" from="GridContainer/StartButtonContainer/StartButton" to="." method="start"]

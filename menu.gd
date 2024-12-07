@@ -47,26 +47,26 @@ func set_difficulty() -> void:
 	var problem_list_size : Dictionary = difficulty_levels() # amount of math problems to solve
 	var problem_complexity : Dictionary = difficulty_levels() # complexity of the math problems
 	
-	$NumberSizeContainer/OptionButton.clear()
-	$ListSizeContainer/OptionButton.clear()
-	$ComplexityContainer/OptionButton.clear()
+	$GridContainer/NumberSizeContainer/OptionButton.clear()
+	$GridContainer/ListSizeContainer/OptionButton.clear()
+	$GridContainer/ComplexityContainer/OptionButton.clear()
 	
 	for i in memory_size_list:
-		$NumberSizeContainer/OptionButton.add_item(memory_size_list[i].label, i)
-	$NumberSizeContainer/OptionButton.select(4)
+		$GridContainer/NumberSizeContainer/OptionButton.add_item(memory_size_list[i].label, i)
+	$GridContainer/NumberSizeContainer/OptionButton.select(4)
 	
 	for i in problem_list_size:
-		$ListSizeContainer/OptionButton.add_item(problem_list_size[i].label, i)
-	$ListSizeContainer/OptionButton.select(2)
+		$GridContainer/ListSizeContainer/OptionButton.add_item(problem_list_size[i].label, i)
+	$GridContainer/ListSizeContainer/OptionButton.select(2)
 	
 	for i in problem_complexity:
-		$ComplexityContainer/OptionButton.add_item(problem_complexity[i].label, i)
-	$ComplexityContainer/OptionButton.select(2)
+		$GridContainer/ComplexityContainer/OptionButton.add_item(problem_complexity[i].label, i)
+	$GridContainer/ComplexityContainer/OptionButton.select(2)
 
 
 func start() -> void:
 	# TODO: pass all data in one signal (use an object??)
-	emit_signal("menu_set_number_size", $NumberSizeContainer/OptionButton.get_selected())
-	emit_signal("menu_set_list_size", $ListSizeContainer/OptionButton.get_selected())
-	emit_signal("menu_set_complexity", $ComplexityContainer/OptionButton.get_selected())
+	emit_signal("menu_set_number_size", $GridContainer/NumberSizeContainer/OptionButton.get_selected())
+	emit_signal("menu_set_list_size", $GridContainer/ListSizeContainer/OptionButton.get_selected())
+	emit_signal("menu_set_complexity", $GridContainer/ComplexityContainer/OptionButton.get_selected())
 	emit_signal("start_game")
