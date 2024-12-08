@@ -46,3 +46,32 @@ color = Color(0.0967089, 0.235205, 0.319018, 1)
 [node name="ChallengeLoop" parent="." instance=ExtResource("4_mx3r3")]
 
 [node name="Remember" parent="." instance=ExtResource("5_p4ecc")]
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+size = Vector2i(506, 235)
+visible = true
+
+[node name="ColorRect2" type="ColorRect" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 502.0
+offset_bottom = 231.0
+color = Color(0.0977064, 0.148248, 0.456813, 1)
+
+[node name="Label" type="Label" parent="PopupPanel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -113.5
+offset_right = 249.0
+offset_bottom = 113.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Yeah! Good Job!"
+
+[connection signal="mouse_entered" from="PopupPanel" to="." method="_hide_popup"]

@@ -74,7 +74,11 @@ func _try_remember(p_val: String) -> void:
 		print("correct!!")
 		$Remember.hide()
 		$Menu.show()
+		$PopupPanel.popup_centered()
 	pass
+
+func _hide_popup() -> void:
+	$PopupPanel.hide()
 
 func _forgot_remember() -> void:
 	print("main forgot")
