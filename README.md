@@ -18,3 +18,17 @@ For now, there are just 3 settings. There will be more settings available by the
 
 ## Definition of done
 Will be decided after review and brainstorm with friends
+#### memory
+- [ ] associate names and colors
+- [ ] remember the grocery list
+- [ ] TODO: one more thing?? (directions ???)(maybe i don't need one more thing for now?)
+
+#### focus
+- [ ] update math difficulty
+- [ ] find the extra character :
+display multiple buttons with strings of characters and the player needs to find the one that doesnt match the other 2.
+
+The chars are not necesarily in order but you need to find the one with the diffenrent number of a's for example : halskdlajdksjdnw & hfjdskajfhdbfjajfdfaf & poiufdsfuapandfmnbda.
+the second and the third have 3 a's and the first has 2 and for this example we will consider they have the same amount of all the other letters.
+
+- TODO: find more focusing tasks
