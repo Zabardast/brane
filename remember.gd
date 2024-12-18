@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func button_test_remember() -> void:
-	emit_signal("test_remember", $Label.get_text())
+	emit_signal("test_remember", $LineEdit.get_text())
 	pass
 
 func button_forgot_remember() -> void:

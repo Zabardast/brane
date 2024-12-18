@@ -5,7 +5,7 @@
 [node name="Remember" type="CanvasLayer"]
 script = ExtResource("1_tepvd")
 
-[node name="Label" type="LineEdit" parent="." groups=["hidable_memory"]]
+[node name="LineEdit" type="LineEdit" parent="." groups=["hidable_memory"]]
 offset_left = 214.0
 offset_top = 659.0
 offset_right = 516.0
@@ -27,6 +27,13 @@ offset_right = 476.0
 offset_bottom = 1234.0
 theme_override_font_sizes/font_size = 50
 text = "ooops..."
+
+[node name="Label" type="Label" parent="."]
+offset_left = 214.0
+offset_top = 434.0
+offset_right = 516.0
+offset_bottom = 511.0
+theme_override_font_sizes/font_size = 50
 
 [connection signal="pressed" from="Button" to="." method="button_test_remember"]
 [connection signal="pressed" from="ForgotButton" to="." method="button_forgot_remember"]

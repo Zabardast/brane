@@ -58,12 +58,14 @@ func _start_challenge() -> void:
 	$ChallengeLoop.set_complexity(complexity)
 	$ChallengeLoop.new_challenge()
 	$ChallengeLoop/ResultLabel.set_text("")
+	$Remember/Label.set_text("")
 	$ChallengeLoop.show()
 	pass
 
 func _start_remember() -> void:
 	$ChallengeLoop.hide()
 	print("remember start")
+	$Remember/LineEdit.set_text("")
 	$Remember/Label.set_text("")
 	$Remember.show()
 	pass
@@ -72,9 +74,13 @@ func _try_remember(p_val: String) -> void:
 	print(p_val)
 	if memory_number == int(p_val):
 		print("correct!!")
+		$Remember/Label.set_text("")
 		$Remember.hide()
 		$Menu.show()
 		$PopupPanel.popup_centered()
+	else :
+		print("Not correct!!")
+		$Remember/Label.set_text("Wouptidou!")
 	pass
 
 func _hide_popup() -> void:

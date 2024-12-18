@@ -57,11 +57,11 @@ func set_difficulty() -> void:
 	
 	for i in problem_list_size:
 		$GridContainer/ListSizeContainer/OptionButton.add_item(problem_list_size[i].label, i)
-	$GridContainer/ListSizeContainer/OptionButton.select(2)
+	$GridContainer/ListSizeContainer/OptionButton.select(1)
 	
 	for i in problem_complexity:
 		$GridContainer/ComplexityContainer/OptionButton.add_item(problem_complexity[i].label, i)
-	$GridContainer/ComplexityContainer/OptionButton.select(2)
+	$GridContainer/ComplexityContainer/OptionButton.select(1)
 
 
 func start() -> void:
