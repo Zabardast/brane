@@ -22,23 +22,36 @@ func set_list_size(p_list_size:int) -> void:
 	list_size = p_list_size
 
 func set_complexity(p_complexity:int) -> void:
-	complexity = p_complexity
+	complexity = p_complexity+1
 
 func new_challenge() -> String:
-	var val1:int = randi() % (10**complexity)
-	var val2:int = randi() % (10**complexity)
+	# setup
+	var num_size = 1
+	if complexity >= 3:
+		num_size = 2
+	if complexity == 5:
+		num_size = 3
+	
+	var operator = 1
+	if complexity == 1 || complexity == 3 || complexity == 5 :
+		operator = 2
+	if complexity == 2 || complexity == 4 :
+		operator = 3
+	
+	var val1:int = randi() % (10**num_size)
+	var val2:int = randi() % (10**num_size)
 	var val3:String = "!"
 	#print_debug("complexity ", complexity)
 	#print_debug("val1 : " ,val1)
 	#print_debug("val2 : " ,val2)
-	print_debug("list_size : " ,list_size)
-	if list_size <= 0:
+	#print_debug("list_size : " ,list_size)
+	if list_size < 0:
 		print_debug("go to recall page")
 		emit_signal("start_remember")
 	
 	list_size = list_size - 1
 	# operator
-	match randi() % 3:
+	match randi() % operator:
 		0:
 			val3 = " + "
 			tmp_result = val1 + val2

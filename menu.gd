@@ -11,30 +11,26 @@ func _ready() -> void:
 func difficulty_levels() -> Dictionary:
 	return{
 		0: {
-			"label": tr("0"),
-			"value": 0
-		},
-		1: {
 			"label": tr("1"),
 			"value": 1
 		},
-		2: {
+		1: {
 			"label": tr("2"),
 			"value": 2
 		},
-		3: {
+		2: {
 			"label": tr("3"),
 			"value": 3
 		},
-		4: {
+		3: {
 			"label": tr("4"),
 			"value": 4
 		},
-		5: {
+		4: {
 			"label": tr("5"),
 			"value": 5
 		},
-		6: {
+		5: {
 			"label": tr("6"),
 			"value": 6
 		},
@@ -53,15 +49,15 @@ func set_difficulty() -> void:
 	
 	for i in memory_size_list:
 		$GridContainer/NumberSizeContainer/OptionButton.add_item(memory_size_list[i].label, i)
-	$GridContainer/NumberSizeContainer/OptionButton.select(4)
+	$GridContainer/NumberSizeContainer/OptionButton.select(3)
 	
 	for i in problem_list_size:
 		$GridContainer/ListSizeContainer/OptionButton.add_item(problem_list_size[i].label, i)
-	$GridContainer/ListSizeContainer/OptionButton.select(1)
+	$GridContainer/ListSizeContainer/OptionButton.select(0)
 	
 	for i in problem_complexity:
 		$GridContainer/ComplexityContainer/OptionButton.add_item(problem_complexity[i].label, i)
-	$GridContainer/ComplexityContainer/OptionButton.select(1)
+	$GridContainer/ComplexityContainer/OptionButton.select(0)
 
 
 func start() -> void:
