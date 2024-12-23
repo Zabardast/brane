@@ -49,8 +49,15 @@ func new_challenge() -> String:
 		print_debug("go to recall page")
 		emit_signal("start_remember")
 	
+	# avoiding negative numbers as a result of a substraction 
+	# because the godot keyboard does not support it
+	if val2 > val1 :
+		var tmp = val1
+		val1 = val2
+		val2 = tmp
+	
 	list_size = list_size - 1
-	# operator
+	
 	match randi() % operator:
 		0:
 			val3 = " + "
@@ -80,8 +87,8 @@ func new_challenge() -> String:
 func atemp_challenge() -> void:
 	var p_result:int = int($SolutionLineEdit.get_text())
 	if p_result == tmp_result:
-		$ResultLabel.set_text("good job! keep up with the good work!")
+		$ResultLabel.set_text("good job! keep up\nwith the good work!")
 		new_challenge()
 	else:
-		$ResultLabel.set_text("hooo so close! (bopit to start!)")
+		$ResultLabel.set_text("hooo so close!\n(bopit to start!)")
 	pass
