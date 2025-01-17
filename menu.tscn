@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://3r8vht8t5e7a"]
+[gd_scene load_steps=4 format=3 uid="uid://3r8vht8t5e7a"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_sn0qw"]
 [ext_resource type="Texture2D" uid="uid://c2bxvndavufm" path="res://phone_bg.jpeg" id="2_k84xi"]
+[ext_resource type="Theme" uid="uid://bpe1mjv80pueb" path="res://local.tres" id="3_prwol"]
 
 [node name="menu" type="CanvasLayer"]
 script = ExtResource("1_sn0qw")
@@ -59,6 +60,7 @@ text = "Challenge Difficulty"
 
 [node name="OptionButton" type="OptionButton" parent="GridContainer/ComplexityContainer"]
 layout_mode = 2
+theme = ExtResource("3_prwol")
 theme_override_font_sizes/font_size = 50
 
 [node name="ListSizeContainer" type="FlowContainer" parent="GridContainer" groups=["hidable_menu"]]
@@ -73,6 +75,7 @@ text = "Challenge Count"
 
 [node name="OptionButton" type="OptionButton" parent="GridContainer/ListSizeContainer"]
 layout_mode = 2
+theme = ExtResource("3_prwol")
 theme_override_font_sizes/font_size = 50
 
 [node name="NumberSizeContainer" type="FlowContainer" parent="GridContainer" groups=["hidable_menu"]]
@@ -87,6 +90,7 @@ text = "Number Size"
 
 [node name="OptionButton" type="OptionButton" parent="GridContainer/NumberSizeContainer"]
 layout_mode = 2
+theme = ExtResource("3_prwol")
 theme_override_font_sizes/font_size = 50
 
 [node name="StartButtonContainer" type="FlowContainer" parent="GridContainer"]
