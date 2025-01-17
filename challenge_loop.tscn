@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0uww8qnpuwuu"]
+[gd_scene load_steps=4 format=3 uid="uid://c0uww8qnpuwuu"]
 
 [ext_resource type="Script" path="res://challenge_loop.gd" id="1_1pjg2"]
+[ext_resource type="Theme" uid="uid://bpe1mjv80pueb" path="res://local.tres" id="2_yov1r"]
 
 [sub_resource type="GDScript" id="GDScript_4i3g8"]
 
@@ -36,6 +37,7 @@ offset_left = 231.0
 offset_top = 987.0
 offset_right = 495.0
 offset_bottom = 1094.0
+theme = ExtResource("2_yov1r")
 theme_override_font_sizes/font_size = 50
 text = "Next"
 

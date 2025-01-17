@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://wp6vf2v07cvq"]
+[gd_scene load_steps=3 format=3 uid="uid://wp6vf2v07cvq"]
 
 [ext_resource type="Script" path="res://remember.gd" id="1_tepvd"]
+[ext_resource type="Theme" uid="uid://bpe1mjv80pueb" path="res://local.tres" id="2_4pp1w"]
 
 [node name="Remember" type="CanvasLayer"]
 script = ExtResource("1_tepvd")
@@ -18,6 +19,7 @@ offset_left = 248.0
 offset_top = 965.0
 offset_right = 476.0
 offset_bottom = 1042.0
+theme = ExtResource("2_4pp1w")
 theme_override_font_sizes/font_size = 50
 text = "Next"
 
@@ -26,6 +28,7 @@ offset_left = 248.0
 offset_top = 1157.0
 offset_right = 476.0
 offset_bottom = 1234.0
+theme = ExtResource("2_4pp1w")
 theme_override_font_sizes/font_size = 50
 text = "ooops..."
 

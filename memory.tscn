@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ju0puuqa2vbk"]
+[gd_scene load_steps=3 format=3 uid="uid://ju0puuqa2vbk"]
 
 [ext_resource type="Script" path="res://memory.gd" id="1_a4wib"]
+[ext_resource type="Theme" uid="uid://bpe1mjv80pueb" path="res://local.tres" id="2_8kbag"]
 
 [node name="Memory" type="CanvasLayer"]
 script = ExtResource("1_a4wib")
@@ -23,6 +24,7 @@ offset_left = 248.0
 offset_top = 965.0
 offset_right = 476.0
 offset_bottom = 1042.0
+theme = ExtResource("2_8kbag")
 theme_override_font_sizes/font_size = 50
 text = "Next"
 

@@ -100,6 +100,7 @@ size_flags_vertical = 3
 
 [node name="StartButton" type="Button" parent="GridContainer/StartButtonContainer" groups=["hidable_menu"]]
 layout_mode = 2
+theme = ExtResource("3_prwol")
 theme_override_font_sizes/font_size = 50
 text = "Start"
 
