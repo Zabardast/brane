@@ -54,8 +54,10 @@ color = Color(0.0967089, 0.235205, 0.319018, 1)
 [node name="Menu" parent="." instance=ExtResource("1_nbcsh")]
 
 [node name="Memory" parent="." instance=ExtResource("3_ckqq2")]
+visible = false
 
 [node name="ChallengeLoop" parent="." instance=ExtResource("4_mx3r3")]
+visible = false
 
 [node name="Remember" parent="." instance=ExtResource("5_p4ecc")]
 visible = false
