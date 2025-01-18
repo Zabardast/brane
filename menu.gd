@@ -10,27 +10,27 @@ func _ready() -> void:
 
 func difficulty_levels() -> Dictionary:
 	return{
-		0: {
+		1: {
 			"label": tr("1"),
 			"value": 1
 		},
-		1: {
+		2: {
 			"label": tr("2"),
 			"value": 2
 		},
-		2: {
+		3: {
 			"label": tr("3"),
 			"value": 3
 		},
-		3: {
+		4: {
 			"label": tr("4"),
 			"value": 4
 		},
-		4: {
+		5: {
 			"label": tr("5"),
 			"value": 5
 		},
-		5: {
+		6: {
 			"label": tr("6"),
 			"value": 6
 		},

@@ -22,7 +22,7 @@ func set_list_size(p_list_size:int) -> void:
 	list_size = p_list_size
 
 func set_complexity(p_complexity:int) -> void:
-	complexity = p_complexity+1
+	complexity = p_complexity #+1
 
 func new_challenge() -> String:
 	# setup
@@ -45,7 +45,7 @@ func new_challenge() -> String:
 	#print_debug("val1 : " ,val1)
 	#print_debug("val2 : " ,val2)
 	#print_debug("list_size : " ,list_size)
-	if list_size < 0:
+	if list_size <= 0:
 		print_debug("go to recall page")
 		emit_signal("start_remember")
 	

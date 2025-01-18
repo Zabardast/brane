@@ -49,7 +49,8 @@ func start_memorizing() -> void:
 
 func get_random_number(p_size: int) -> int:
 	# for some reason to the power is ** and not ^
-	return randi() % ((10**p_size)-1)
+	print("random number size :", p_size)
+	return randi() % (10**(p_size))
 
 func _start_challenge() -> void:
 	$Memory.hide()
@@ -94,13 +95,13 @@ func _forgot_remember() -> void:
 # TODO remove and pass data in the start game signal
 
 func _menu_set_number_size(p_val: int) -> void:
-	#print("number size ", p_val)
-	number_size = p_val
+	print("number size ", p_val)
+	number_size = p_val + 1 # I should have a list and get the value from there 
 	
 func _menu_set_list_size(p_val: int) -> void:
-	#print("list size ", p_val)
-	list_size = p_val
+	print("list size ", p_val)
+	list_size = p_val + 1
 
 func _menu_set_complexity(p_val: int) -> void:
-	#print("complexity ", p_val)
-	complexity = p_val
+	print("complexity ", p_val)
+	complexity = p_val + 1

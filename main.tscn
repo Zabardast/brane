@@ -7,16 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://wp6vf2v07cvq" path="res://remember.tscn" id="5_p4ecc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6w6t"]
-bg_color = Color(0.0470588, 0.0784314, 0.286275, 1)
+bg_color = Color(0.180392, 0.0745098, 0.0588235, 0.627451)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_blend = true
+border_color = Color(0.717647, 0, 0.0705882, 0.690196)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+anti_aliasing = false
 
 [node name="Main" type="Control"]
 layout_mode = 3
