@@ -7,6 +7,7 @@ signal menu_set_complexity(complexity: int)
 
 func _ready() -> void:
 	set_difficulty()
+	set_saved_config()
 
 func difficulty_levels() -> Dictionary:
 	return{
@@ -47,20 +48,49 @@ func set_difficulty() -> void:
 	$GridContainer/ListSizeContainer/OptionButton.clear()
 	$GridContainer/ComplexityContainer/OptionButton.clear()
 	
+	var config = ConfigFile.new()
+	var err = config.load("user://config.cfg")
+	
 	for i in memory_size_list:
 		$GridContainer/NumberSizeContainer/OptionButton.add_item(memory_size_list[i].label, i)
-	$GridContainer/NumberSizeContainer/OptionButton.select(3)
 	
 	for i in problem_list_size:
 		$GridContainer/ListSizeContainer/OptionButton.add_item(problem_list_size[i].label, i)
-	$GridContainer/ListSizeContainer/OptionButton.select(0)
 	
 	for i in problem_complexity:
 		$GridContainer/ComplexityContainer/OptionButton.add_item(problem_complexity[i].label, i)
-	$GridContainer/ComplexityContainer/OptionButton.select(0)
+	
+	if err != OK:
+		# memory_size_lsit
+		$GridContainer/NumberSizeContainer/OptionButton.select(3)
+		# problem_list_size
+		$GridContainer/ListSizeContainer/OptionButton.select(0)
+		# problem_complexity
+		$GridContainer/ComplexityContainer/OptionButton.select(0)
+	else : # set saved values
+		$GridContainer/NumberSizeContainer/OptionButton.select(config.get_value("conf", "mem_size"))
+		$GridContainer/ListSizeContainer/OptionButton.select(config.get_value("conf", "prblm_lst_size"))
+		$GridContainer/ComplexityContainer/OptionButton.select(config.get_value("conf", "prblm_cmplexity"))
 
+func set_saved_config() -> void:
+	var config = ConfigFile.new()
+	var err = config.load("user://config.cfg")
+	if err != OK:
+		return
+	$GridContainer/NumberSizeContainer/OptionButton.select(config.get_value("conf", "mem_size"))
+	$GridContainer/ListSizeContainer/OptionButton.select(config.get_value("conf", "prblm_lst_size"))
+	$GridContainer/ComplexityContainer/OptionButton.select(config.get_value("conf", "prblm_cmplexity"))
+
+func save_config() -> void:
+	var config = ConfigFile.new()
+	config.set_value("conf","mem_size", $GridContainer/NumberSizeContainer/OptionButton.get_selected())
+	config.set_value("conf","prblm_lst_size", $GridContainer/ListSizeContainer/OptionButton.get_selected())
+	config.set_value("conf","prblm_cmplexity", $GridContainer/ComplexityContainer/OptionButton.get_selected())
+	config.save("user://config.cfg")
 
 func start() -> void:
+	# save config for next startup?
+	save_config()
 	# TODO: pass all data in one signal (use an object??)
 	emit_signal("menu_set_number_size", $GridContainer/NumberSizeContainer/OptionButton.get_selected())
 	emit_signal("menu_set_list_size", $GridContainer/ListSizeContainer/OptionButton.get_selected())
